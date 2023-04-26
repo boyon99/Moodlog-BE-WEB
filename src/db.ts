@@ -1,6 +1,5 @@
 import { DataSource } from 'typeorm'
-import dotenv from 'dotenv'
-dotenv.config()
+require('dotenv').config()
 
 export const myDataBase = new DataSource({
   type: 'mysql',
@@ -9,7 +8,7 @@ export const myDataBase = new DataSource({
   username: 'admin',
   password: process.env.AWS_DB_PASSWORD,
   database: 'moodlog',
-  entities: ['src/entity/*.ts'],
+  entities: [process.env.NODE_ENV === 'production' ? 'dist/entity/*.js' : 'src/entity/*.ts'],
   logging: true,
   synchronize: true,
 })

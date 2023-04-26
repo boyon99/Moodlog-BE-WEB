@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "aws-sdk": "^2.1359.0",
     "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -11,7 +13,7 @@
     "multer-s3": "^3.0.1",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.15"
+    "typeorm": "^0.3.14"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -32,7 +34,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec ts-node src/app.ts",
+    "start": "NODE_ENV=production node dist/app.js",
     "build": "tsc"
   },
   "repository": {
@@ -44,5 +46,6 @@
   "bugs": {
     "url": "https://github.com/REACT-2/Moodlog-BE-WEB/issues"
   },
-  "homepage": "https://github.com/REACT-2/Moodlog-BE-WEB#readme"
+  "homepage": "https://github.com/REACT-2/Moodlog-BE-WEB#readme",
+  "keywords": []
 }
